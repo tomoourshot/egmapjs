@@ -15,7 +15,7 @@
 	
 window.onload = function() {
 	var map = initMap('mapid')
-	map.setZoom(16)
+	map.setZoom(8)
 	map.panTo([ 35.943560,136.188917 ]) // 鯖江駅
 	
 	map.addIcon(35.943560,136.188917,"こんにちはあかちゃん") 
@@ -50,9 +50,7 @@ window.onload = function() {
 		alert("現在位置に取得に失敗！")
 	})
 
-
-}
- // leaflet.sprite
+	 // leaflet.sprite
         L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.3.1/dist/images/';
         L.marker([35.7101,139.8087], {icon: L.spriteIcon()}).addTo(map); // default blue.
         L.marker([35.7101,139.8087], {icon: L.spriteIcon('green')}).addTo(map);
@@ -61,6 +59,8 @@ window.onload = function() {
         L.marker([35.7101,139.8147], {icon: L.spriteIcon('red')}).addTo(map);
         L.marker([35.7101,139.8167], {icon: L.spriteIcon('purple')}).addTo(map);
         L.marker([35.7101,139.8187], {icon: L.spriteIcon('violet')}).addTo(map);
+
+}
 
 </script>
 <style>
