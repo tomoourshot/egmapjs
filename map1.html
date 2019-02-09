@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"/>
 
-<title>マップアプリ1</title>
+<title>変更チェック</title>
 
 <link rel="apple-touch-icon" href="app-icon.png"/>
 <meta property="og:image" content="ogp-image.jpg"/>
@@ -8,9 +8,9 @@
 <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
 <script src="https://code4fukui.github.io/egmapjs/egmap.js"></script>
 <link rel="stylesheet" href="https://code4fukui.github.io/egmapjs/egmap.css"/>
-<script src="js/leaflet.sprite.js"></script>
 <script src="https://fukuno.jig.jp/fukuno.js"></script>
 <script src="https://code4fukui.github.io/egmapjs/sparql.js"></script>
+<script src="js/leaflet.sprite.js"></script>
 <script>"use strict"
 	
 window.onload = function() {
@@ -18,8 +18,7 @@ window.onload = function() {
 	map.setZoom(8)
 	map.panTo([ 35.943560,136.188917 ]) // 鯖江駅
 	
-	map.addIcon(35.943560,136.188917,"こんにちはあかちゃん") 
-	map.addIcon(35.944571,136.186228,"summer","sakuranbo.svg", 64) 
+	map.addIcon(35.943560,136.188917,"さばええき") 
 	
 	// SPARQLクエリー
 	var query = `
@@ -52,17 +51,12 @@ window.onload = function() {
 
 	 // leaflet.sprite
         L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.3.1/dist/images/';
-        L.marker([35.7101,139.8087], {icon: L.spriteIcon()}).addTo(map); // default blue.
-        L.marker([35.7101,139.8087], {icon: L.spriteIcon('green')}).addTo(map);
         L.marker([35.943560,136.188917], {icon: L.spriteIcon('orange')}).addTo(map);
-        L.marker([35.7101,139.8127], {icon: L.spriteIcon('yellow')}).addTo(map);
-        L.marker([35.7101,139.8147], {icon: L.spriteIcon('red')}).addTo(map);
-        L.marker([35.7101,139.8167], {icon: L.spriteIcon('purple')}).addTo(map);
-        L.marker([35.7101,139.8187], {icon: L.spriteIcon('violet')}).addTo(map);
 
 }
 
 </script>
+	
 <style>
 
 body { margin: 0; font-family: sans-serif; text-align: center; }
