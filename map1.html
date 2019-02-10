@@ -11,6 +11,10 @@
 <script src="https://fukuno.jig.jp/fukuno.js"></script>
 <script src="https://code4fukui.github.io/egmapjs/sparql.js"></script>
 <script src="https://tomoourshot.github.io/egmapjs/leaflet.sprite.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 <script>"use strict"
 	
 window.onload = function() {
@@ -48,6 +52,13 @@ window.onload = function() {
 	}, function() {
 		alert("現在位置に取得に失敗！")
 	})
+	// ルート検索
+	L.Routing.control({
+  		waypoints: [
+   		 L.latLng(57.74, 11.94),
+   		 L.latLng(57.6792, 11.949)
+  ]
+}).addTo(map);
 
 	 // leaflet.sprite
         L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.3.1/dist/images/';
