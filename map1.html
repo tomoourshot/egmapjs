@@ -21,7 +21,6 @@ window.onload = function() {
 	var map = initMap('mapid')
 	map.setZoom(8)
 	map.panTo([ 35.943560,136.188917 ]) // 鯖江駅
-	
 	map.addIcon(35.943560,136.188917,"さばええき") 
 	
 	// SPARQLクエリー
@@ -49,17 +48,16 @@ window.onload = function() {
 		const pos = [ gpos.coords.latitude, gpos.coords.longitude ]
 		current.setLatLng(pos)
 		map.panTo(pos)
+		// ルート検索
+		L.Routing.control({
+  		waypoints: [
+   		 L.latLng(gpos.coords.latitude, gpos.coords.longitude),
+   		 L.latLng(35.943560,136.188917)
+ 		 ]
+}).addTo(map);
 	}, function() {
 		alert("現在位置に取得に失敗！")
 	})
-	// ルート検索
-	L.Routing.control({
-  		waypoints: [
-   		 L.latLng(35.943560,136.188917),
-   		 L.latLng(35.943560,136.188917)
-  ]
-}).addTo(map);
-
 	 // leaflet.sprite
         L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.3.1/dist/images/';
         L.marker([35.943560,136.188917], {icon: L.spriteIcon('orange')}).addTo(map);
